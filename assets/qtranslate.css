@@ -1,0 +1,30 @@
+.cfq-multi-language-field::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.cfq-language-button {
+	float: right;
+	position: relative;
+	top: 3px;
+	right: -3px;
+	z-index: 100;
+	background: #f1f1f1;
+	padding: 10px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+}
+
+.cfq-language-button.is-current {
+	border-bottom-color: white;
+	background: white;
+}
+
+.cfq-multi-language-field .regular-text {
+	display: none !important;
+}
+
+.cfq-multi-language-field .regular-text.is-current {
+	display: block !important;
+}
