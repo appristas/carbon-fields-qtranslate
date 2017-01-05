@@ -2,9 +2,11 @@
 
 This plugin adds translatable fields for Carbon Fields using qTranslate-X.
 
-## Intallation and Activation
+## Installation
 
-Currently, installation only exists through Github. So, clone this repository to plugins directory and enable it from Plugins.
+Install the plugin from [Wordpress Plugins][wp-plugin].
+
+[wp-plugin]: https://wordpress.org/plugins/carbon-fields-qtranslate/
 
 ## Getting Started
 
@@ -56,7 +58,7 @@ Before submitting pull request please conform to [Wordpress PHP Coding Standards
 
 ### TODO
 
-- Add plugin to wordpress.org
+- ~~Add plugin to wordpress.org~~
 - Add this package to wpackagist.org
 - Add more translatable fields (TextArea, RichText)
 
