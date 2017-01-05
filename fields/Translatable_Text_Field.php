@@ -36,40 +36,15 @@ class Translatable_Text_Field extends Field {
 	 */
 	public function template() {
 		?>
-		<div class="cfq-multi-language-field"></div>
-		<#
-		jQuery(document).ready(function() {
-			languages.forEach(function(code) {
-				var className = 'cfq-language-button';
-				if (code == languageCurrent) {
-					className += ' is-current';
-				}
-				jQuery('.cfq-multi-language-field').append(
-					'<button class="' + className + '" data-language="' + code + '">' + languageNames[code] + '</button>'
-				);
-			});
+		<div id={{id}} class="cfq-multi-language-field">
+			<# languages.forEach(function(code) { #>
+				<button type="button" class="cfq-language-button" data-language={{code}}>{{languageNames[code]}}</button>
+			<# }); #>
 
-			languages.forEach(function(code) {
-				var className = 'cfq-field-' + id + ' regular-text';
-				if (code == languageCurrent) {
-					className += ' is-current';
-				}
-				jQuery('.cfq-multi-language-field').append(
-					'<input type="text" id="' + id + '" data-language="' + code + '" name="' + name + '[' + code + ']" value="' + splitted_values[code] + '" class="' + className + '">'
-				);
-			});
-
-			jQuery('body').on('click', '.cfq-language-button', function(e) {
-				e.preventDefault();
-				jQuery('.cfq-language-button').removeClass('is-current');
-				jQuery(this).addClass('is-current');
-				var lang = jQuery(this).data('language');
-
-				jQuery('.cfq-field-' + id).removeClass('is-current');
-				jQuery('.cfq-field-' + id + '[data-language=' + lang + ']').addClass('is-current');
-			});
-		});
-		#>
+			<# languages.forEach(function(code) { #>
+				<input type="text" data-language={{code}} name="{{name}}[{{code}}]" value="{{splitted_values[code]}}" class="cfq-field regular-text" />
+			<# }); #>
+		</div>
 		<?php
 	}
 
@@ -82,7 +57,8 @@ class Translatable_Text_Field extends Field {
 	 */
 	static function admin_enqueue_scripts() {
 		$dir = plugin_dir_url( __DIR__ );
-		wp_enqueue_style( 'carbon-fields-qtranslate', $dir . '/assets/qtranslate.css' );
+		wp_enqueue_style( 'carbon-fields-language-buttons', $dir . 'assets/language-buttons.css' );
+		wp_enqueue_script( 'carbon-fields-Translatable_Text', $dir . 'assets/translatable_text_field.js', [ 'carbon-fields' ] );
 	}
 
 	public function save() {
