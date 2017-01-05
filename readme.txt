@@ -40,5 +40,8 @@ A. Yes. This plugin requires Carbon Fields and qTranslate-X plugins.
 
 == Change Log ==
 
+= 1.0.1 =
+* Fixed a bug where multiple text fields would cause fields to show multiple text boxes
+
 = 1.0 =
 * Initial version

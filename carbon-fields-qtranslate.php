@@ -4,7 +4,7 @@
  * Description: Extends Carbon Fields with translatable fields using qTranslate
  * Author: Gasim Gasimzada
  * Author URI: gasim@appristas.io
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 
 class Carbon_Fields_QTranslate {
